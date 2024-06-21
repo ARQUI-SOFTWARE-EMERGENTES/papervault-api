@@ -1,0 +1,2871 @@
+{
+  "contractName": "ResearchsContract",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "abstractText",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "doi",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum ResearchsContract.Status",
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uploadedBy",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "actionBy",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "counter",
+          "type": "uint256"
+        }
+      ],
+      "name": "CreatedResearch",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum ResearchsContract.Status",
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "actionBy",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "counter",
+          "type": "uint256"
+        }
+      ],
+      "name": "changeStatus",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "researchs",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "abstractText",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "doi",
+          "type": "string"
+        },
+        {
+          "internalType": "enum ResearchsContract.Status",
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "uploadedBy",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "actionBy",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_title",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_abstractText",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_content",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_doi",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_uploadedBy",
+          "type": "string"
+        }
+      ],
+      "name": "uploadResearch",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_counter",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_action",
+          "type": "string"
+        }
+      ],
+      "name": "approveResearch",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_counter",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_action",
+          "type": "string"
+        }
+      ],
+      "name": "rejectResearch",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_counter",
+          "type": "uint256"
+        }
+      ],
+      "name": "getResearch",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "abstractText",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "doi",
+              "type": "string"
+            },
+            {
+              "internalType": "enum ResearchsContract.Status",
+              "name": "status",
+              "type": "uint8"
+            },
+            {
+              "internalType": "string",
+              "name": "uploadedBy",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "actionBy",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct ResearchsContract.Research",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.5+commit.a4f2e591\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"abstractText\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"doi\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"enum ResearchsContract.Status\",\"name\":\"status\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"uploadedBy\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"actionBy\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"counter\",\"type\":\"uint256\"}],\"name\":\"CreatedResearch\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"enum ResearchsContract.Status\",\"name\":\"status\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"actionBy\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"counter\",\"type\":\"uint256\"}],\"name\":\"changeStatus\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_counter\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_action\",\"type\":\"string\"}],\"name\":\"approveResearch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_counter\",\"type\":\"uint256\"}],\"name\":\"getResearch\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"abstractText\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"doi\",\"type\":\"string\"},{\"internalType\":\"enum ResearchsContract.Status\",\"name\":\"status\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"uploadedBy\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"actionBy\",\"type\":\"string\"}],\"internalType\":\"struct ResearchsContract.Research\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_counter\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_action\",\"type\":\"string\"}],\"name\":\"rejectResearch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"researchs\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"title\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"abstractText\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"content\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"doi\",\"type\":\"string\"},{\"internalType\":\"enum ResearchsContract.Status\",\"name\":\"status\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"uploadedBy\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"actionBy\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_title\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_abstractText\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_content\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_doi\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_uploadedBy\",\"type\":\"string\"}],\"name\":\"uploadResearch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ResearchsContract.sol\":\"ResearchsContract\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"project:/contracts/ResearchsContract.sol\":{\"keccak256\":\"0x276309fdf2be2186ea1143137ecbc3aa5919230e6cc07d7d3b8bdf4cd4f570ad\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cb97d4fa9f8e152f8ecaa74a010840cb54497a58855fb7c3d6def85c77380ab6\",\"dweb:/ipfs/QmXHkr9GQsncoKfWbpunjdx6WjF34kQZVbxrSczCz99YWi\"]}},\"version\":1}",
+  "bytecode": "0x608060405234156100105760006000fd5b6001600155610ece80610026608039806080f350fe60406080815260043610151561013f576000803560e01c6304c7814a8114610052576308cd35a6811461008057635b78e86681146100a85763997a5a8f81146100d05763e3e02ba7811461010e5761013c565b341561005c578182fd5b610065366101c5565b6100728183858789610c3c565b5050505050818351f361013c565b341561008a578182fd5b610093366102bc565b61009d8183610950565b5050818351f361013c565b34156100b2578182fd5b6100bb366102bc565b6100c58183610b2f565b5050818351f361013c565b34156100da578182fd5b6100eb6100e63661029c565b610d5d565b8951806100fe838587898b8d8f89610412565b0381f3505050505050505061013c565b3415610118578182fd5b6101296101243661029c565b610a5d565b83518061013683836104a4565b0381f350505b50505b5060006000fd610ecd565b600082601f830112151561015e5760006000fd5b813567ffffffffffffffff81111561017957610178610e25565b5b6040516101906020601f19601f850116018261091f565b8181528460208386010111156101a65760006000fd5b8160208501602083013760006020838301015280925050505b92915050565b6000600060006000600060a0600319870112156101e25760006000fd5b6004803567ffffffffffffffff808211156101fd5760006000fd5b6102098983850161014a565b975060243591508082111561021e5760006000fd5b61022a8983850161014a565b965060443591508082111561023f5760006000fd5b61024b8983850161014a565b95506064359150808211156102605760006000fd5b61026c8983850161014a565b94506084359150808211156102815760006000fd5b5061028e8882840161014a565b925050505b91939590929450565b60006020600319830112156102b15760006000fd5b60043590505b919050565b600060006040600319840112156102d35760006000fd5b600435915060243567ffffffffffffffff8111156102f15760006000fd5b6102fe848260040161014a565b9150505b915091565b60018152505b565b60028152505b565b60038110151561033757634e487b7160e01b600052602160045260246000fd5b80825250505b565b6000815180845260005b8181101561036c576020808286010151818388010152505b602081019050610349565b8181111561037e576000602083870101525b506020601f19601f8301168501019150505b92915050565b6080815260006103a9608083018461033f565b6001602084015282810360408401526103c2818661033f565b9150508460608301525b949350505050565b6080815260006103e7608083018461033f565b600260208401528281036040840152610400818661033f565b9150508460608301525b949350505050565b60e08152600061042560e083018461033f565b8281036020840152610437818661033f565b9050828103604084015261044b818761033f565b9050828103606084015261045f818861033f565b905061046e6080840189610317565b82810360a0840152610480818a61033f565b905082810360c0840152610494818b61033f565b9150505b98975050505050505050565b602081526000825160e060208401526104c161010084018261033f565b90506020840151601f19808584030160408601526104df838361033f565b925060408601519150808584030160608601526104fc838361033f565b92506060860151915080858403016080860152610519838361033f565b92506080860151915061052f60a0860183610317565b60a08601519150808584030160c086015261054a838361033f565b925060c08601519150808584030160e086015250610568828261033f565b925050505b92915050565b80600052506000602060002090505b90565b601f8211156105d757600081815260208120601f850160051c810160208610156105ad578190505b601f850160051c820191508090505b818110156105d3578281555b6001810190506105bc565b5050505b5050505b565b60006040519050600082546105f181610889565b80845260018083166000811461060e57600181146106235761065b565b60ff198416602087015260408601945061065b565b8660005260208060002060005b8581101561065057815483828b01015284820191505b8281019050610630565b82818a010197505050505b5050505061066b8282038361091f565b505b919050565b815167ffffffffffffffff81111561068d5761068c610e25565b5b6106a18161069b8454610889565b84610585565b60006020809150601f8311600181146106db57600084156106c3578387015190505b8460011b6000198660031b1c1982161786555061073b565b601f1984166106e986610573565b60005b828110156107105785890151825560018201915084860195505b84810190506106ec565b508582101561072f578488015160001960f88860031b161c1981168255505b505060018460011b0185555b5050505050505b565b8151805167ffffffffffffffff81111561076157610760610e25565b5b6107758161076f8554610889565b85610585565b60006020809150601f8311600181146107af5760008415610797578386015190505b8460011b6000198660031b1c1982161787555061080f565b601f1984166107bd87610573565b60005b828110156107e45785880151825560018201915084860195505b84810190506107c0565b5085821015610803578487015160001960f88860031b161c1981168255505b505060018460011b0186555b506108208187015160018701610672565b50505050610835604083015160028301610672565b610846606083015160038301610672565b608082015161085481610e81565b6108618160048401610e3d565b5061087360a083015160058301610672565b61088460c083015160068301610672565b50505b565b60008160011c9050600182168015156108a357607f821691505b602082108114156108c457634e487b7160e01b600052602260045260246000fd5b505b919050565b60e0810181811067ffffffffffffffff821117156108ec576108eb610e25565b5b8060405250505b565b6020810181811067ffffffffffffffff8211171561091657610915610e25565b5b8060405250505b565b601f19601f830116810181811067ffffffffffffffff8211171561094657610945610e25565b5b806040525050505b565b806000526000602052604060002060405161096a816108cb565b610973826105dd565b8152610981600183016105dd565b6020820152610992600283016105dd565b60408201526109a3600383016105dd565b606082015260ff600483015416608082016109be8282610ea5565b6109ca600585016105dd565b60a08401526109db600685016105dd565b935060c0830191508382526109ef81610307565b5084815250610a0881610a03600154610e0e565b610744565b80519150506001546040517f640cda97a98f3bf74fb996e645a464c638f3dcf0ca40bcfe192818ac00a871cd81610a4184888786610396565b0382a150610a56610a5182610de0565b610e71565b505050505b565b6000604051610a6b816108cb565b60608082528060208301528060408301528081830152600060808301528060a08301528060c083015283600052600060205260406000209150604051610ab0816108cb565b610ab9836105dd565b8152610ac7600184016105dd565b6020820152610ad8600284016105dd565b6040820152610ae9600384016105dd565b82820152610b0160ff60048501541660808301610ea5565b610b0d600584016105dd565b60a0820152610b1e600684016105dd565b60c08201528093505050505b919050565b8060005260006020526040600020604051610b49816108cb565b610b52826105dd565b8152610b60600183016105dd565b6020820152610b71600283016105dd565b6040820152610b82600383016105dd565b606082015260ff60048301541660808201610b9d8282610ea5565b610ba9600585016105dd565b60a0840152610bba600685016105dd565b935060c083019150838252610bce8161030f565b5084815250610be781610be2600154610e0e565b610744565b80519150506001546040517f640cda97a98f3bf74fb996e645a464c638f3dcf0ca40bcfe192818ac00a871cd81610c20848887866103d4565b0382a150610c35610c3082610de0565b610e71565b505050505b565b60408051610c49816108cb565b828152836020820152848282015285606082015260008060808301528760a08301528251610c76816108f5565b8181528060c084015250600154815280602052610c9582848320610744565b60015491508251610100808252610cae8183018761033f565b90508181036020830152610cc2818861033f565b905081810385830152610cd5818961033f565b9450508084036060820152610cea848961033f565b935081608082015280840360a0820152610d04848a61033f565b93508084038060c08301528285528360e08301527f8b584a2fc71be2db15135ae985b6748e7b2e7767a03832ac7e24fc50822fcd326020820183a1505050610d53610d4e82610de0565b610e79565b505050505050505b565b8060005250600060205260006000600060006000600060006040600020610d83816105dd565b9750610d91600182016105dd565b9650610d9f600282016105dd565b9550610dad600382016105dd565b945060ff6004820154169350610dc5600582016105dd565b9250610dd3600682016105dd565b9150505b90919293949596565b6000600019821415610e0257634e487b7160e01b600052601160045260246000fd5b6001820190505b919050565b806000525060006020526000604060002090505b90565b634e487b7160e01b600052604160045260246000fd5b565b600382101515610e5d57634e487b7160e01b600052602160045260246000fd5b60ff1981541660ff8316811782555050505b565b80600155505b565b80600155505b565b600381101515610ea157634e487b7160e01b600052602160045260246000fd5b505b565b600382101515610ec557634e487b7160e01b600052602160045260246000fd5b81815250505b565b",
+  "deployedBytecode": "0x60406080815260043610151561013f576000803560e01c6304c7814a8114610052576308cd35a6811461008057635b78e86681146100a85763997a5a8f81146100d05763e3e02ba7811461010e5761013c565b341561005c578182fd5b610065366101c5565b6100728183858789610c3c565b5050505050818351f361013c565b341561008a578182fd5b610093366102bc565b61009d8183610950565b5050818351f361013c565b34156100b2578182fd5b6100bb366102bc565b6100c58183610b2f565b5050818351f361013c565b34156100da578182fd5b6100eb6100e63661029c565b610d5d565b8951806100fe838587898b8d8f89610412565b0381f3505050505050505061013c565b3415610118578182fd5b6101296101243661029c565b610a5d565b83518061013683836104a4565b0381f350505b50505b5060006000fd610ecd565b600082601f830112151561015e5760006000fd5b813567ffffffffffffffff81111561017957610178610e25565b5b6040516101906020601f19601f850116018261091f565b8181528460208386010111156101a65760006000fd5b8160208501602083013760006020838301015280925050505b92915050565b6000600060006000600060a0600319870112156101e25760006000fd5b6004803567ffffffffffffffff808211156101fd5760006000fd5b6102098983850161014a565b975060243591508082111561021e5760006000fd5b61022a8983850161014a565b965060443591508082111561023f5760006000fd5b61024b8983850161014a565b95506064359150808211156102605760006000fd5b61026c8983850161014a565b94506084359150808211156102815760006000fd5b5061028e8882840161014a565b925050505b91939590929450565b60006020600319830112156102b15760006000fd5b60043590505b919050565b600060006040600319840112156102d35760006000fd5b600435915060243567ffffffffffffffff8111156102f15760006000fd5b6102fe848260040161014a565b9150505b915091565b60018152505b565b60028152505b565b60038110151561033757634e487b7160e01b600052602160045260246000fd5b80825250505b565b6000815180845260005b8181101561036c576020808286010151818388010152505b602081019050610349565b8181111561037e576000602083870101525b506020601f19601f8301168501019150505b92915050565b6080815260006103a9608083018461033f565b6001602084015282810360408401526103c2818661033f565b9150508460608301525b949350505050565b6080815260006103e7608083018461033f565b600260208401528281036040840152610400818661033f565b9150508460608301525b949350505050565b60e08152600061042560e083018461033f565b8281036020840152610437818661033f565b9050828103604084015261044b818761033f565b9050828103606084015261045f818861033f565b905061046e6080840189610317565b82810360a0840152610480818a61033f565b905082810360c0840152610494818b61033f565b9150505b98975050505050505050565b602081526000825160e060208401526104c161010084018261033f565b90506020840151601f19808584030160408601526104df838361033f565b925060408601519150808584030160608601526104fc838361033f565b92506060860151915080858403016080860152610519838361033f565b92506080860151915061052f60a0860183610317565b60a08601519150808584030160c086015261054a838361033f565b925060c08601519150808584030160e086015250610568828261033f565b925050505b92915050565b80600052506000602060002090505b90565b601f8211156105d757600081815260208120601f850160051c810160208610156105ad578190505b601f850160051c820191508090505b818110156105d3578281555b6001810190506105bc565b5050505b5050505b565b60006040519050600082546105f181610889565b80845260018083166000811461060e57600181146106235761065b565b60ff198416602087015260408601945061065b565b8660005260208060002060005b8581101561065057815483828b01015284820191505b8281019050610630565b82818a010197505050505b5050505061066b8282038361091f565b505b919050565b815167ffffffffffffffff81111561068d5761068c610e25565b5b6106a18161069b8454610889565b84610585565b60006020809150601f8311600181146106db57600084156106c3578387015190505b8460011b6000198660031b1c1982161786555061073b565b601f1984166106e986610573565b60005b828110156107105785890151825560018201915084860195505b84810190506106ec565b508582101561072f578488015160001960f88860031b161c1981168255505b505060018460011b0185555b5050505050505b565b8151805167ffffffffffffffff81111561076157610760610e25565b5b6107758161076f8554610889565b85610585565b60006020809150601f8311600181146107af5760008415610797578386015190505b8460011b6000198660031b1c1982161787555061080f565b601f1984166107bd87610573565b60005b828110156107e45785880151825560018201915084860195505b84810190506107c0565b5085821015610803578487015160001960f88860031b161c1981168255505b505060018460011b0186555b506108208187015160018701610672565b50505050610835604083015160028301610672565b610846606083015160038301610672565b608082015161085481610e81565b6108618160048401610e3d565b5061087360a083015160058301610672565b61088460c083015160068301610672565b50505b565b60008160011c9050600182168015156108a357607f821691505b602082108114156108c457634e487b7160e01b600052602260045260246000fd5b505b919050565b60e0810181811067ffffffffffffffff821117156108ec576108eb610e25565b5b8060405250505b565b6020810181811067ffffffffffffffff8211171561091657610915610e25565b5b8060405250505b565b601f19601f830116810181811067ffffffffffffffff8211171561094657610945610e25565b5b806040525050505b565b806000526000602052604060002060405161096a816108cb565b610973826105dd565b8152610981600183016105dd565b6020820152610992600283016105dd565b60408201526109a3600383016105dd565b606082015260ff600483015416608082016109be8282610ea5565b6109ca600585016105dd565b60a08401526109db600685016105dd565b935060c0830191508382526109ef81610307565b5084815250610a0881610a03600154610e0e565b610744565b80519150506001546040517f640cda97a98f3bf74fb996e645a464c638f3dcf0ca40bcfe192818ac00a871cd81610a4184888786610396565b0382a150610a56610a5182610de0565b610e71565b505050505b565b6000604051610a6b816108cb565b60608082528060208301528060408301528081830152600060808301528060a08301528060c083015283600052600060205260406000209150604051610ab0816108cb565b610ab9836105dd565b8152610ac7600184016105dd565b6020820152610ad8600284016105dd565b6040820152610ae9600384016105dd565b82820152610b0160ff60048501541660808301610ea5565b610b0d600584016105dd565b60a0820152610b1e600684016105dd565b60c08201528093505050505b919050565b8060005260006020526040600020604051610b49816108cb565b610b52826105dd565b8152610b60600183016105dd565b6020820152610b71600283016105dd565b6040820152610b82600383016105dd565b606082015260ff60048301541660808201610b9d8282610ea5565b610ba9600585016105dd565b60a0840152610bba600685016105dd565b935060c083019150838252610bce8161030f565b5084815250610be781610be2600154610e0e565b610744565b80519150506001546040517f640cda97a98f3bf74fb996e645a464c638f3dcf0ca40bcfe192818ac00a871cd81610c20848887866103d4565b0382a150610c35610c3082610de0565b610e71565b505050505b565b60408051610c49816108cb565b828152836020820152848282015285606082015260008060808301528760a08301528251610c76816108f5565b8181528060c084015250600154815280602052610c9582848320610744565b60015491508251610100808252610cae8183018761033f565b90508181036020830152610cc2818861033f565b905081810385830152610cd5818961033f565b9450508084036060820152610cea848961033f565b935081608082015280840360a0820152610d04848a61033f565b93508084038060c08301528285528360e08301527f8b584a2fc71be2db15135ae985b6748e7b2e7767a03832ac7e24fc50822fcd326020820183a1505050610d53610d4e82610de0565b610e79565b505050505050505b565b8060005250600060205260006000600060006000600060006040600020610d83816105dd565b9750610d91600182016105dd565b9650610d9f600282016105dd565b9550610dad600382016105dd565b945060ff6004820154169350610dc5600582016105dd565b9250610dd3600682016105dd565b9150505b90919293949596565b6000600019821415610e0257634e487b7160e01b600052601160045260246000fd5b6001820190505b919050565b806000525060006020526000604060002090505b90565b634e487b7160e01b600052604160045260246000fd5b565b600382101515610e5d57634e487b7160e01b600052602160045260246000fd5b60ff1981541660ff8316811782555050505b565b80600155505b565b80600155505b565b600381101515610ea157634e487b7160e01b600052602160045260246000fd5b505b565b600382101515610ec557634e487b7160e01b600052602160045260246000fd5b81815250505b565b",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.5;\r\n\r\ncontract ResearchsContract {\r\n\r\n    enum Status { PENDING, APPROVED, REJECTED }\r\n\r\n    event CreatedResearch (\r\n        string title,\r\n        string abstractText,\r\n        string content,\r\n        string doi,\r\n        Status status,\r\n        string uploadedBy,\r\n        string actionBy,\r\n        uint counter\r\n    );\r\n\r\n    event changeStatus (\r\n        string title,\r\n        Status status,\r\n        string actionBy,\r\n        uint counter\r\n    );\r\n\r\n    struct Research {\r\n        string title;\r\n        string abstractText;\r\n        string content;\r\n        string doi;\r\n        Status status;\r\n        string uploadedBy;\r\n        string actionBy;\r\n    }\r\n\r\n    mapping(uint => Research) public researchs;\r\n    uint researchsCount = 1;\r\n\r\n    function uploadResearch(string memory _title, string memory _abstractText, string memory _content, string memory _doi, string memory _uploadedBy) public {\r\n        researchs[researchsCount] = Research(_title, _abstractText, _content, _doi, Status.PENDING, _uploadedBy, \"\");\r\n        emit CreatedResearch(_title, _abstractText, _content, _doi, Status.PENDING, _uploadedBy, \"\", researchsCount);\r\n        researchsCount++;\r\n    }\r\n\r\n    function approveResearch(uint _counter, string memory _action) public {\r\n        Research memory research = researchs[_counter];\r\n        research.status = Status.APPROVED;\r\n        research.actionBy = _action;\r\n        researchs[researchsCount] = research;\r\n        emit changeStatus(research.title, Status.APPROVED, _action, researchsCount);\r\n        researchsCount++;\r\n    }\r\n\r\n    function rejectResearch(uint _counter, string memory _action) public {\r\n        Research memory research = researchs[_counter];\r\n        research.status = Status.REJECTED;\r\n        research.actionBy = _action;\r\n        researchs[researchsCount] = research;\r\n        emit changeStatus(research.title, Status.REJECTED, _action, researchsCount);\r\n        researchsCount++;\r\n    }\r\n\r\n    function getResearch(uint _counter) public view returns (Research memory) {\r\n        return researchs[_counter];\r\n    }\r\n\r\n}",
+  "sourcePath": "C:\\Users\\gonza\\Documents\\arquitectura emergentes\\papervault-api\\src\\researchsContracts\\contracts\\ResearchsContract.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ResearchsContract.sol",
+    "exportedSymbols": {
+      "ResearchsContract": [
+        209
+      ]
+    },
+    "id": 210,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 209,
+        "linearizedBaseContracts": [
+          209
+        ],
+        "name": "ResearchsContract",
+        "nameLocation": "69:17:0",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "ResearchsContract.Status",
+            "id": 5,
+            "members": [
+              {
+                "id": 2,
+                "name": "PENDING",
+                "nameLocation": "110:7:0",
+                "nodeType": "EnumValue",
+                "src": "110:7:0"
+              },
+              {
+                "id": 3,
+                "name": "APPROVED",
+                "nameLocation": "119:8:0",
+                "nodeType": "EnumValue",
+                "src": "119:8:0"
+              },
+              {
+                "id": 4,
+                "name": "REJECTED",
+                "nameLocation": "129:8:0",
+                "nodeType": "EnumValue",
+                "src": "129:8:0"
+              }
+            ],
+            "name": "Status",
+            "nameLocation": "101:6:0",
+            "nodeType": "EnumDefinition",
+            "src": "96:43:0"
+          },
+          {
+            "anonymous": false,
+            "id": 24,
+            "name": "CreatedResearch",
+            "nameLocation": "153:15:0",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "title",
+                  "nameLocation": "187:5:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24,
+                  "src": "180:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "180:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "abstractText",
+                  "nameLocation": "210:12:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24,
+                  "src": "203:19:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 8,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "203:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "content",
+                  "nameLocation": "240:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24,
+                  "src": "233:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "233:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "doi",
+                  "nameLocation": "265:3:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24,
+                  "src": "258:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 12,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "status",
+                  "nameLocation": "286:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24,
+                  "src": "279:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Status_$5",
+                    "typeString": "enum ResearchsContract.Status"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14,
+                      "name": "Status",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 5,
+                      "src": "279:6:0"
+                    },
+                    "referencedDeclaration": 5,
+                    "src": "279:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Status_$5",
+                      "typeString": "enum ResearchsContract.Status"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 18,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "uploadedBy",
+                  "nameLocation": "310:10:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24,
+                  "src": "303:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "303:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 20,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "actionBy",
+                  "nameLocation": "338:8:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24,
+                  "src": "331:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 19,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "331:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 22,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "counter",
+                  "nameLocation": "362:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24,
+                  "src": "357:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 21,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "357:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "169:207:0"
+            },
+            "src": "147:230:0"
+          },
+          {
+            "anonymous": false,
+            "id": 35,
+            "name": "changeStatus",
+            "nameLocation": "391:12:0",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 34,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 26,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "title",
+                  "nameLocation": "422:5:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "415:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 25,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "415:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 29,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "status",
+                  "nameLocation": "445:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "438:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Status_$5",
+                    "typeString": "enum ResearchsContract.Status"
+                  },
+                  "typeName": {
+                    "id": 28,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 27,
+                      "name": "Status",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 5,
+                      "src": "438:6:0"
+                    },
+                    "referencedDeclaration": 5,
+                    "src": "438:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Status_$5",
+                      "typeString": "enum ResearchsContract.Status"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 31,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "actionBy",
+                  "nameLocation": "469:8:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "462:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 30,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 33,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "counter",
+                  "nameLocation": "493:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "488:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 32,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "488:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "404:103:0"
+            },
+            "src": "385:123:0"
+          },
+          {
+            "canonicalName": "ResearchsContract.Research",
+            "id": 51,
+            "members": [
+              {
+                "constant": false,
+                "id": 37,
+                "mutability": "mutable",
+                "name": "title",
+                "nameLocation": "550:5:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 51,
+                "src": "543:12:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 36,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "543:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 39,
+                "mutability": "mutable",
+                "name": "abstractText",
+                "nameLocation": "573:12:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 51,
+                "src": "566:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 38,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "566:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41,
+                "mutability": "mutable",
+                "name": "content",
+                "nameLocation": "603:7:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 51,
+                "src": "596:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 40,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "596:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 43,
+                "mutability": "mutable",
+                "name": "doi",
+                "nameLocation": "628:3:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 51,
+                "src": "621:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 42,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "621:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 46,
+                "mutability": "mutable",
+                "name": "status",
+                "nameLocation": "649:6:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 51,
+                "src": "642:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Status_$5",
+                  "typeString": "enum ResearchsContract.Status"
+                },
+                "typeName": {
+                  "id": 45,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 44,
+                    "name": "Status",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 5,
+                    "src": "642:6:0"
+                  },
+                  "referencedDeclaration": 5,
+                  "src": "642:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Status_$5",
+                    "typeString": "enum ResearchsContract.Status"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 48,
+                "mutability": "mutable",
+                "name": "uploadedBy",
+                "nameLocation": "673:10:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 51,
+                "src": "666:17:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 47,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "666:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 50,
+                "mutability": "mutable",
+                "name": "actionBy",
+                "nameLocation": "701:8:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 51,
+                "src": "694:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 49,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "694:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Research",
+            "nameLocation": "523:8:0",
+            "nodeType": "StructDefinition",
+            "scope": 209,
+            "src": "516:201:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "997a5a8f",
+            "id": 56,
+            "mutability": "mutable",
+            "name": "researchs",
+            "nameLocation": "758:9:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 209,
+            "src": "725:42:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Research_$51_storage_$",
+              "typeString": "mapping(uint256 => struct ResearchsContract.Research)"
+            },
+            "typeName": {
+              "id": 55,
+              "keyType": {
+                "id": 52,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "733:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "725:25:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Research_$51_storage_$",
+                "typeString": "mapping(uint256 => struct ResearchsContract.Research)"
+              },
+              "valueType": {
+                "id": 54,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 53,
+                  "name": "Research",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 51,
+                  "src": "741:8:0"
+                },
+                "referencedDeclaration": 51,
+                "src": "741:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Research_$51_storage_ptr",
+                  "typeString": "struct ResearchsContract.Research"
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 59,
+            "mutability": "mutable",
+            "name": "researchsCount",
+            "nameLocation": "779:14:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 209,
+            "src": "774:23:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 57,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "774:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "31",
+              "id": 58,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "796:1:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1_by_1",
+                "typeString": "int_const 1"
+              },
+              "value": "1"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 102,
+              "nodeType": "Block",
+              "src": "959:273:0",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 85,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 72,
+                        "name": "researchs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 56,
+                        "src": "970:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Research_$51_storage_$",
+                          "typeString": "mapping(uint256 => struct ResearchsContract.Research storage ref)"
+                        }
+                      },
+                      "id": 74,
+                      "indexExpression": {
+                        "id": 73,
+                        "name": "researchsCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 59,
+                        "src": "980:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "970:25:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Research_$51_storage",
+                        "typeString": "struct ResearchsContract.Research storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 76,
+                          "name": "_title",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 61,
+                          "src": "1007:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "id": 77,
+                          "name": "_abstractText",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 63,
+                          "src": "1015:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "id": 78,
+                          "name": "_content",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 65,
+                          "src": "1030:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "id": 79,
+                          "name": "_doi",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 67,
+                          "src": "1040:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "expression": {
+                            "id": 80,
+                            "name": "Status",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5,
+                            "src": "1046:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_Status_$5_$",
+                              "typeString": "type(enum ResearchsContract.Status)"
+                            }
+                          },
+                          "id": 81,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "PENDING",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2,
+                          "src": "1046:14:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Status_$5",
+                            "typeString": "enum ResearchsContract.Status"
+                          }
+                        },
+                        {
+                          "id": 82,
+                          "name": "_uploadedBy",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 69,
+                          "src": "1062:11:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "hexValue": "",
+                          "id": 83,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "string",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1075:2:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                            "typeString": "literal_string \"\""
+                          },
+                          "value": ""
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_enum$_Status_$5",
+                            "typeString": "enum ResearchsContract.Status"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                            "typeString": "literal_string \"\""
+                          }
+                        ],
+                        "id": 75,
+                        "name": "Research",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 51,
+                        "src": "998:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Research_$51_storage_ptr_$",
+                          "typeString": "type(struct ResearchsContract.Research storage pointer)"
+                        }
+                      },
+                      "id": 84,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "998:80:0",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                        "typeString": "struct ResearchsContract.Research memory"
+                      }
+                    },
+                    "src": "970:108:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Research_$51_storage",
+                      "typeString": "struct ResearchsContract.Research storage ref"
+                    }
+                  },
+                  "id": 86,
+                  "nodeType": "ExpressionStatement",
+                  "src": "970:108:0"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 88,
+                        "name": "_title",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 61,
+                        "src": "1110:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 89,
+                        "name": "_abstractText",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 63,
+                        "src": "1118:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 90,
+                        "name": "_content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 65,
+                        "src": "1133:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 91,
+                        "name": "_doi",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 67,
+                        "src": "1143:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 92,
+                          "name": "Status",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5,
+                          "src": "1149:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Status_$5_$",
+                            "typeString": "type(enum ResearchsContract.Status)"
+                          }
+                        },
+                        "id": 93,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "PENDING",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 2,
+                        "src": "1149:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Status_$5",
+                          "typeString": "enum ResearchsContract.Status"
+                        }
+                      },
+                      {
+                        "id": 94,
+                        "name": "_uploadedBy",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 69,
+                        "src": "1165:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "hexValue": "",
+                        "id": 95,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1178:2:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                          "typeString": "literal_string \"\""
+                        },
+                        "value": ""
+                      },
+                      {
+                        "id": 96,
+                        "name": "researchsCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 59,
+                        "src": "1182:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_Status_$5",
+                          "typeString": "enum ResearchsContract.Status"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                          "typeString": "literal_string \"\""
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 87,
+                      "name": "CreatedResearch",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24,
+                      "src": "1094:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_enum$_Status_$5_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$__$",
+                        "typeString": "function (string memory,string memory,string memory,string memory,enum ResearchsContract.Status,string memory,string memory,uint256)"
+                      }
+                    },
+                    "id": 97,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1094:103:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 98,
+                  "nodeType": "EmitStatement",
+                  "src": "1089:108:0"
+                },
+                {
+                  "expression": {
+                    "id": 100,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "1208:16:0",
+                    "subExpression": {
+                      "id": 99,
+                      "name": "researchsCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 59,
+                      "src": "1208:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 101,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1208:16:0"
+                }
+              ]
+            },
+            "functionSelector": "04c7814a",
+            "id": 103,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "uploadResearch",
+            "nameLocation": "815:14:0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 70,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 61,
+                  "mutability": "mutable",
+                  "name": "_title",
+                  "nameLocation": "844:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 103,
+                  "src": "830:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 60,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "830:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 63,
+                  "mutability": "mutable",
+                  "name": "_abstractText",
+                  "nameLocation": "866:13:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 103,
+                  "src": "852:27:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 62,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "852:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 65,
+                  "mutability": "mutable",
+                  "name": "_content",
+                  "nameLocation": "895:8:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 103,
+                  "src": "881:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 64,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "881:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 67,
+                  "mutability": "mutable",
+                  "name": "_doi",
+                  "nameLocation": "919:4:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 103,
+                  "src": "905:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 66,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "905:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 69,
+                  "mutability": "mutable",
+                  "name": "_uploadedBy",
+                  "nameLocation": "939:11:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 103,
+                  "src": "925:25:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 68,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "925:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "829:122:0"
+            },
+            "returnParameters": {
+              "id": 71,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "959:0:0"
+            },
+            "scope": 209,
+            "src": "806:426:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 148,
+              "nodeType": "Block",
+              "src": "1310:307:0",
+              "statements": [
+                {
+                  "assignments": [
+                    112
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 112,
+                      "mutability": "mutable",
+                      "name": "research",
+                      "nameLocation": "1337:8:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 148,
+                      "src": "1321:24:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                        "typeString": "struct ResearchsContract.Research"
+                      },
+                      "typeName": {
+                        "id": 111,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 110,
+                          "name": "Research",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 51,
+                          "src": "1321:8:0"
+                        },
+                        "referencedDeclaration": 51,
+                        "src": "1321:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Research_$51_storage_ptr",
+                          "typeString": "struct ResearchsContract.Research"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 116,
+                  "initialValue": {
+                    "baseExpression": {
+                      "id": 113,
+                      "name": "researchs",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 56,
+                      "src": "1348:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Research_$51_storage_$",
+                        "typeString": "mapping(uint256 => struct ResearchsContract.Research storage ref)"
+                      }
+                    },
+                    "id": 115,
+                    "indexExpression": {
+                      "id": 114,
+                      "name": "_counter",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 105,
+                      "src": "1358:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1348:19:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Research_$51_storage",
+                      "typeString": "struct ResearchsContract.Research storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1321:46:0"
+                },
+                {
+                  "expression": {
+                    "id": 122,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 117,
+                        "name": "research",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 112,
+                        "src": "1378:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                          "typeString": "struct ResearchsContract.Research memory"
+                        }
+                      },
+                      "id": 119,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "status",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 46,
+                      "src": "1378:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Status_$5",
+                        "typeString": "enum ResearchsContract.Status"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 120,
+                        "name": "Status",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5,
+                        "src": "1396:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Status_$5_$",
+                          "typeString": "type(enum ResearchsContract.Status)"
+                        }
+                      },
+                      "id": 121,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "APPROVED",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3,
+                      "src": "1396:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Status_$5",
+                        "typeString": "enum ResearchsContract.Status"
+                      }
+                    },
+                    "src": "1378:33:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Status_$5",
+                      "typeString": "enum ResearchsContract.Status"
+                    }
+                  },
+                  "id": 123,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1378:33:0"
+                },
+                {
+                  "expression": {
+                    "id": 128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 124,
+                        "name": "research",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 112,
+                        "src": "1422:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                          "typeString": "struct ResearchsContract.Research memory"
+                        }
+                      },
+                      "id": 126,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "actionBy",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 50,
+                      "src": "1422:17:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 127,
+                      "name": "_action",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 107,
+                      "src": "1442:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "1422:27:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "id": 129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1422:27:0"
+                },
+                {
+                  "expression": {
+                    "id": 134,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 130,
+                        "name": "researchs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 56,
+                        "src": "1460:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Research_$51_storage_$",
+                          "typeString": "mapping(uint256 => struct ResearchsContract.Research storage ref)"
+                        }
+                      },
+                      "id": 132,
+                      "indexExpression": {
+                        "id": 131,
+                        "name": "researchsCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 59,
+                        "src": "1470:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1460:25:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Research_$51_storage",
+                        "typeString": "struct ResearchsContract.Research storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 133,
+                      "name": "research",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 112,
+                      "src": "1488:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                        "typeString": "struct ResearchsContract.Research memory"
+                      }
+                    },
+                    "src": "1460:36:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Research_$51_storage",
+                      "typeString": "struct ResearchsContract.Research storage ref"
+                    }
+                  },
+                  "id": 135,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1460:36:0"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 137,
+                          "name": "research",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 112,
+                          "src": "1525:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                            "typeString": "struct ResearchsContract.Research memory"
+                          }
+                        },
+                        "id": 138,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "title",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 37,
+                        "src": "1525:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 139,
+                          "name": "Status",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5,
+                          "src": "1541:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Status_$5_$",
+                            "typeString": "type(enum ResearchsContract.Status)"
+                          }
+                        },
+                        "id": 140,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "APPROVED",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 3,
+                        "src": "1541:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Status_$5",
+                          "typeString": "enum ResearchsContract.Status"
+                        }
+                      },
+                      {
+                        "id": 141,
+                        "name": "_action",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 107,
+                        "src": "1558:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 142,
+                        "name": "researchsCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 59,
+                        "src": "1567:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_Status_$5",
+                          "typeString": "enum ResearchsContract.Status"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 136,
+                      "name": "changeStatus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 35,
+                      "src": "1512:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_enum$_Status_$5_$_t_string_memory_ptr_$_t_uint256_$returns$__$",
+                        "typeString": "function (string memory,enum ResearchsContract.Status,string memory,uint256)"
+                      }
+                    },
+                    "id": 143,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1512:70:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 144,
+                  "nodeType": "EmitStatement",
+                  "src": "1507:75:0"
+                },
+                {
+                  "expression": {
+                    "id": 146,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "1593:16:0",
+                    "subExpression": {
+                      "id": 145,
+                      "name": "researchsCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 59,
+                      "src": "1593:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 147,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1593:16:0"
+                }
+              ]
+            },
+            "functionSelector": "08cd35a6",
+            "id": 149,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approveResearch",
+            "nameLocation": "1249:15:0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 108,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 105,
+                  "mutability": "mutable",
+                  "name": "_counter",
+                  "nameLocation": "1270:8:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 149,
+                  "src": "1265:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 104,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1265:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 107,
+                  "mutability": "mutable",
+                  "name": "_action",
+                  "nameLocation": "1294:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 149,
+                  "src": "1280:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 106,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1280:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1264:38:0"
+            },
+            "returnParameters": {
+              "id": 109,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1310:0:0"
+            },
+            "scope": 209,
+            "src": "1240:377:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 194,
+              "nodeType": "Block",
+              "src": "1694:307:0",
+              "statements": [
+                {
+                  "assignments": [
+                    158
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 158,
+                      "mutability": "mutable",
+                      "name": "research",
+                      "nameLocation": "1721:8:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 194,
+                      "src": "1705:24:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                        "typeString": "struct ResearchsContract.Research"
+                      },
+                      "typeName": {
+                        "id": 157,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 156,
+                          "name": "Research",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 51,
+                          "src": "1705:8:0"
+                        },
+                        "referencedDeclaration": 51,
+                        "src": "1705:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Research_$51_storage_ptr",
+                          "typeString": "struct ResearchsContract.Research"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 162,
+                  "initialValue": {
+                    "baseExpression": {
+                      "id": 159,
+                      "name": "researchs",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 56,
+                      "src": "1732:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Research_$51_storage_$",
+                        "typeString": "mapping(uint256 => struct ResearchsContract.Research storage ref)"
+                      }
+                    },
+                    "id": 161,
+                    "indexExpression": {
+                      "id": 160,
+                      "name": "_counter",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 151,
+                      "src": "1742:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1732:19:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Research_$51_storage",
+                      "typeString": "struct ResearchsContract.Research storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1705:46:0"
+                },
+                {
+                  "expression": {
+                    "id": 168,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 163,
+                        "name": "research",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 158,
+                        "src": "1762:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                          "typeString": "struct ResearchsContract.Research memory"
+                        }
+                      },
+                      "id": 165,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "status",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 46,
+                      "src": "1762:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Status_$5",
+                        "typeString": "enum ResearchsContract.Status"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 166,
+                        "name": "Status",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5,
+                        "src": "1780:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Status_$5_$",
+                          "typeString": "type(enum ResearchsContract.Status)"
+                        }
+                      },
+                      "id": 167,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "REJECTED",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4,
+                      "src": "1780:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Status_$5",
+                        "typeString": "enum ResearchsContract.Status"
+                      }
+                    },
+                    "src": "1762:33:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Status_$5",
+                      "typeString": "enum ResearchsContract.Status"
+                    }
+                  },
+                  "id": 169,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1762:33:0"
+                },
+                {
+                  "expression": {
+                    "id": 174,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 170,
+                        "name": "research",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 158,
+                        "src": "1806:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                          "typeString": "struct ResearchsContract.Research memory"
+                        }
+                      },
+                      "id": 172,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "actionBy",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 50,
+                      "src": "1806:17:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 173,
+                      "name": "_action",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 153,
+                      "src": "1826:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "1806:27:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "id": 175,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1806:27:0"
+                },
+                {
+                  "expression": {
+                    "id": 180,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 176,
+                        "name": "researchs",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 56,
+                        "src": "1844:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Research_$51_storage_$",
+                          "typeString": "mapping(uint256 => struct ResearchsContract.Research storage ref)"
+                        }
+                      },
+                      "id": 178,
+                      "indexExpression": {
+                        "id": 177,
+                        "name": "researchsCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 59,
+                        "src": "1854:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1844:25:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Research_$51_storage",
+                        "typeString": "struct ResearchsContract.Research storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 179,
+                      "name": "research",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 158,
+                      "src": "1872:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                        "typeString": "struct ResearchsContract.Research memory"
+                      }
+                    },
+                    "src": "1844:36:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Research_$51_storage",
+                      "typeString": "struct ResearchsContract.Research storage ref"
+                    }
+                  },
+                  "id": 181,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1844:36:0"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 183,
+                          "name": "research",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 158,
+                          "src": "1909:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                            "typeString": "struct ResearchsContract.Research memory"
+                          }
+                        },
+                        "id": 184,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "title",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 37,
+                        "src": "1909:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 185,
+                          "name": "Status",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5,
+                          "src": "1925:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_Status_$5_$",
+                            "typeString": "type(enum ResearchsContract.Status)"
+                          }
+                        },
+                        "id": 186,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "REJECTED",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4,
+                        "src": "1925:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Status_$5",
+                          "typeString": "enum ResearchsContract.Status"
+                        }
+                      },
+                      {
+                        "id": 187,
+                        "name": "_action",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 153,
+                        "src": "1942:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 188,
+                        "name": "researchsCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 59,
+                        "src": "1951:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_Status_$5",
+                          "typeString": "enum ResearchsContract.Status"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 182,
+                      "name": "changeStatus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 35,
+                      "src": "1896:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_enum$_Status_$5_$_t_string_memory_ptr_$_t_uint256_$returns$__$",
+                        "typeString": "function (string memory,enum ResearchsContract.Status,string memory,uint256)"
+                      }
+                    },
+                    "id": 189,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1896:70:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 190,
+                  "nodeType": "EmitStatement",
+                  "src": "1891:75:0"
+                },
+                {
+                  "expression": {
+                    "id": 192,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "1977:16:0",
+                    "subExpression": {
+                      "id": 191,
+                      "name": "researchsCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 59,
+                      "src": "1977:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 193,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1977:16:0"
+                }
+              ]
+            },
+            "functionSelector": "5b78e866",
+            "id": 195,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "rejectResearch",
+            "nameLocation": "1634:14:0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 154,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 151,
+                  "mutability": "mutable",
+                  "name": "_counter",
+                  "nameLocation": "1654:8:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 195,
+                  "src": "1649:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 150,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1649:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 153,
+                  "mutability": "mutable",
+                  "name": "_action",
+                  "nameLocation": "1678:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 195,
+                  "src": "1664:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 152,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1664:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1648:38:0"
+            },
+            "returnParameters": {
+              "id": 155,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1694:0:0"
+            },
+            "scope": 209,
+            "src": "1625:376:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 207,
+              "nodeType": "Block",
+              "src": "2083:45:0",
+              "statements": [
+                {
+                  "expression": {
+                    "baseExpression": {
+                      "id": 203,
+                      "name": "researchs",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 56,
+                      "src": "2101:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Research_$51_storage_$",
+                        "typeString": "mapping(uint256 => struct ResearchsContract.Research storage ref)"
+                      }
+                    },
+                    "id": 205,
+                    "indexExpression": {
+                      "id": 204,
+                      "name": "_counter",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 197,
+                      "src": "2111:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "2101:19:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Research_$51_storage",
+                      "typeString": "struct ResearchsContract.Research storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 202,
+                  "id": 206,
+                  "nodeType": "Return",
+                  "src": "2094:26:0"
+                }
+              ]
+            },
+            "functionSelector": "e3e02ba7",
+            "id": 208,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getResearch",
+            "nameLocation": "2018:11:0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 198,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 197,
+                  "mutability": "mutable",
+                  "name": "_counter",
+                  "nameLocation": "2035:8:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 208,
+                  "src": "2030:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 196,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2030:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2029:15:0"
+            },
+            "returnParameters": {
+              "id": 202,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 201,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 208,
+                  "src": "2066:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Research_$51_memory_ptr",
+                    "typeString": "struct ResearchsContract.Research"
+                  },
+                  "typeName": {
+                    "id": 200,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 199,
+                      "name": "Research",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 51,
+                      "src": "2066:8:0"
+                    },
+                    "referencedDeclaration": 51,
+                    "src": "2066:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Research_$51_storage_ptr",
+                      "typeString": "struct ResearchsContract.Research"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2065:17:0"
+            },
+            "scope": 209,
+            "src": "2009:119:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 210,
+        "src": "60:2073:0",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:2100:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.5+commit.a4f2e591.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x406a99C2C89a7aD9Ab16AfC4937e6d74FB747E16",
+      "transactionHash": "0xb9bb2c946189bc0ee5db524ed379cd79961ce14bb9e6babb140e65fafff9f159"
+    }
+  },
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-06-20T16:41:45.542Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
